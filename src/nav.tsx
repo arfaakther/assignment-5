@@ -4,7 +4,7 @@ export function Nav() {
     
     return <>
         <div className='border-[1px] border-gray-100 text-[16px] font-medium text-[#334155]'>
-        <div className="flex justify-between items-center gap-4 container m-auto p-5">
+        <div className="flex justify-between items-center gap-4 container mx-auto p-5">
             <img src={logotext} alt="" />
             <div className="flex justify-between items-center gap-6 list-none">
                 <li className="text-[#DB2777]"><a href="">Home</a></li>

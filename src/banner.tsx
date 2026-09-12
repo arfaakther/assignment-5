@@ -2,7 +2,7 @@ import banner from "../../B14-A05-DevStack-main/assets/banner-stack.png";
 export function Banner() {
   return (
     <>
-      <div className="flex justify-between items-center gap-2 container m-auto p-3">
+      <div className="flex justify-between items-center gap-2 container mx-auto p-3">
         <div>
           <h1 className="text-[60px] font-extrabold leading-none">
             Build Your Ideal<br /><span className="bg-gradient-to-r from-orange-400 via-pink-500 to-pink-800 bg-clip-text text-transparent">Development Stack</span>
