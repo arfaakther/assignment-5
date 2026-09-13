@@ -1,7 +1,7 @@
-import { use, useState, type Dispatch, type SetStateAction } from "react";
+import { use, useState } from "react";
 import { TechCard } from "./techCard";
 import type { ITechCardProps } from "./type";
-import componentName from './yourStack';
+
 
 
 export interface ITechProps{
@@ -17,6 +17,13 @@ export function TechCards({ techstackPromise }: ITechProps) {
    
     setCart(newCart);
    
+  };
+  const handleRemoveStack = (techStack: ITechCardProps): void => {
+    const newCart = cart.filter((item) => item.id !== techStack.id);
+    setCart(newCart);
+  };
+  const handleRemoveAll = (): void => {
+    setCart([]);
   };
   const techStacks = use(techstackPromise);
 
@@ -55,7 +62,7 @@ export function TechCards({ techstackPromise }: ITechProps) {
                         <img src={techStack.icon} width={25} alt="" />
                         <p className="font-medium">{techStack.name}</p>
                         
-                        <button className="text-gray-500 hover:text-red-700 font-bold text-[15px]">✕</button>
+                        <button onClick={() => handleRemoveStack(techStack)} className="text-gray-500 cursor-pointer hover:text-red-700 font-bold text-[15px]">✕</button>
                         </div>
                       <button className="border-1 text-[10px] border-gray-100 rounded-[4px] px-1 bg-gray-100">
                           {techStack.category}
@@ -65,7 +72,7 @@ export function TechCards({ techstackPromise }: ITechProps) {
         
                   </div>
                 </div>
-                <button className="border-1 w-full mt-[30px] p-1 text-red-400 rounded-[6px] hover:text-red-700 font-bold">Remove All</button>
+                <button onClick={handleRemoveAll} className="border-1 cursor-pointer w-full mt-[30px] p-1 text-red-400 rounded-[6px] hover:text-red-700 font-bold">Remove All</button>
               </div>)}
         </div>
           </div>
