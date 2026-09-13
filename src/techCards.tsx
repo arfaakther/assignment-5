@@ -28,9 +28,11 @@ export function TechCards({ techstackPromise }: ITechProps) {
   const handleRemoveStack = (techStack: ITechCardProps): void => {
     const newCart = cart.filter((item) => item.id !== techStack.id);
     setCart(newCart);
+    toast.error("Technology removed from stack");
   };
   const handleRemoveAll = (): void => {
     setCart([]);
+    toast.error("All technologies removed from stack");
   };
   const techStacks = use(techstackPromise);
 
