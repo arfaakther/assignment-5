@@ -5,7 +5,7 @@ import { Footer } from "./footer";
 import { Nav } from "./nav";
 import { TechCards } from "./techCards";
 import type { ITechCardProps } from "./type";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 

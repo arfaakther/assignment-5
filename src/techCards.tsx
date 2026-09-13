@@ -1,6 +1,7 @@
 import { use, useState } from "react";
 import { TechCard } from "./techCard";
 import type { ITechCardProps } from "./type";
+import { toast } from "react-toastify";
 
 
 
@@ -15,9 +16,10 @@ export function TechCards({ techstackPromise }: ITechProps) {
   const handleAddToCart = (techStack: ITechCardProps): void => {
     const newCart = [...cart, techStack];
     if (cart.includes(techStack)) {
-      return;
+      toast.error("Technology already in stack!");
     }
-    else{
+    else {
+      toast.success("Added to Stack!");
    
       setCart(newCart);
     }

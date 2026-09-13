@@ -24,7 +24,8 @@ export const TechCard = ({techStack, handleAddToCart}: {techStack: ITechCardProp
               <span className="text-amber-400">★</span> {techStack.rating}
             </p>
           </div>
-          <button onClick={() => handleAddToCart(techStack)} className="border-1 cursor-pointer w-full text-white bg-gray-800 rounded-[8px] py-[5px] mt-1">
+          <button onClick={() => handleAddToCart(techStack)}
+            className="border-1 cursor-pointer w-full text-white bg-gray-800 rounded-[8px] py-[5px] mt-1">
             Add to Stack
           </button>
         </div>
