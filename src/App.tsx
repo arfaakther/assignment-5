@@ -5,7 +5,8 @@ import { Footer } from "./footer";
 import { Nav } from "./nav";
 import { TechCards } from "./techCards";
 import type { ITechCardProps } from "./type";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -21,7 +22,8 @@ return (
       <Banner></Banner>
       <Suspense fallback={<p>Loading Data..........</p>}>
         <TechCards techstackPromise={techStackPromise()} ></TechCards>
-      </Suspense>
+    </Suspense>
+    <ToastContainer></ToastContainer>
       <Contact></Contact>
       <Footer></Footer>
     </>

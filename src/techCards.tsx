@@ -14,8 +14,13 @@ export function TechCards({ techstackPromise }: ITechProps) {
   const [cart, setCart] = useState<ITechCardProps[]>([]);
   const handleAddToCart = (techStack: ITechCardProps): void => {
     const newCart = [...cart, techStack];
+    if (cart.includes(techStack)) {
+      return;
+    }
+    else{
    
-    setCart(newCart);
+      setCart(newCart);
+    }
    
   };
   const handleRemoveStack = (techStack: ITechCardProps): void => {
