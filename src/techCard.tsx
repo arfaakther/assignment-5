@@ -1,6 +1,9 @@
-import type { ITechCardProps } from "./type";
+import type {ITechCardProps} from "./type";
+ 
+import {type Dispatch, type SetStateAction} from "react";
 
-export const TechCard = ({ techStack }: { techStack: ITechCardProps }) => {
+export const TechCard = ({techStack, handleAddToCart}: {techStack: ITechCardProps; handleAddToCart: (techStack: ITechCardProps) => void}) => {
+  
   return (
     <>
       <div className="container mx-auto mt-5">
@@ -22,7 +25,7 @@ export const TechCard = ({ techStack }: { techStack: ITechCardProps }) => {
               <span className="text-amber-400">★</span> {techStack.rating}
             </p>
           </div>
-          <button className="border-1 w-full text-white bg-gray-800 rounded-[8px] py-[5px] mt-1">
+          <button onClick={() => handleAddToCart(techStack)} className="border-1 w-full text-white bg-gray-800 rounded-[8px] py-[5px] mt-1">
             Add to Stack
           </button>
         </div>
